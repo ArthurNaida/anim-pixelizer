@@ -1,0 +1,35 @@
+{
+  "target_size": [32, 32],
+  "workdir": "workdir",
+  "palette": [  ],
+  "preprocess": {
+    "pad": 2,
+    "min_size": 16,
+    "max_channel_diff": 18,
+    "min_gray": 120,
+    "max_gray": 255,
+    "min_component_pixels": 25,
+    "alpha_threshold": 20,
+    "expected_frames": null,
+    "strict_frames": true,
+    "bg_mode": "transparent",
+    "solid_bg_color": "#000000"
+  },
+  "fixer": {
+    "command": ["pixel-art-fixer", "{input}", "-o", "{output}"],
+    "fallback_nearest_resize": true
+  },
+  "postprocess": {
+    "alpha_threshold": 128,
+    "min_neighbors": 1,
+    "noise_window": 3,
+    "noise_max_density": 0.35,
+    "paint_outline": true,
+    "outline_color": "#141013",
+    "snap_palette": true
+  },
+  "review": {
+    "viewer_cmd": ["xdg-open"],
+    "wait_for_close": true
+  }
+}
